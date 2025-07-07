@@ -6,7 +6,7 @@
 
 // Set input/output directories for macro II
 inputDir_nuc = getDirectory("Choose Cropped Nucleus Input Directory");
-outputDir_obj = getDirectory("Choose Segmented objects Output Directory");
+outputDir_obj = getDirectory("Choose visual output Directory");
 
 // Faster processing (no UI updates)
 setBatchMode(true);
@@ -64,11 +64,11 @@ for (i = 0; i < fileList2.length; i++) {
 
 	// Find 3D Maxima on the original (then closes the results not needed)
 	selectImage("C1-nuc_obj");
-	run("3D Maxima Finder", "minimum=0 radiusxy=1 radiusz=1 noise=50");
+	run("3D Maxima Finder", "minimum=0 radiusxy=0.5 radiusz=0.5 noise=25");
 	
 	// Segment the Coilin channel with 3D Simple segmentation using seeds
 	selectImage("ROIseg");
-	run("3D Simple Segmentation", "seeds=peaks_C1-nuc_obj low_threshold=32 min_size=0 max_size=-1");
+	run("3D Simple Segmentation", "seeds=peaks_C1-nuc_obj low_threshold=16 min_size=0.1 max_size=-1");
 
 	// Save the bin, seg, int for coilin
 	selectImage("Bin");
@@ -88,7 +88,7 @@ for (i = 0; i < fileList2.length; i++) {
 	run("Duplicate...", "title=nm duplicate");
 	selectImage("C2-nuc_obj");
 	run("Gaussian Blur 3D...", "x=1 y=1 z=1");
-	run("3D Simple Segmentation", "seeds=None low_threshold=32 min_size=0 max_size=-1");
+	run("3D Simple Segmentation", "seeds=None low_threshold=28 min_size=0 max_size=-1");
 
 	// Save the bin for DAPI
 

@@ -1,0 +1,2 @@
+Nb,Name,Label,Type,CX (pix),CY (pix),CZ (pix),CX (unit),CY (unit),CZ (unit),Xmin (pix),Ymin (pix),Zmin (pix),Xmax (pix),Ymax (pix),Zmax (pix),VolBounding (pix),RatioVolbox,Vol (unit),Vol (pix),Surf (unit),Surf (pix),SurfCorr (pix),Comp (pix),Spher (pix),CompCorr (pix),SpherCorr (pix),Comp (unit),Spher (unit),CompDiscrete,Ell_MajRad,Ell_Elon,Ell_Flatness,volEllipsoid (unit),RatioVolEllipsoid,DCMin (unit),DCMax (unit),DCMean (unit),DCSD (unit)
+NaN,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

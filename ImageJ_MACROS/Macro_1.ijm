@@ -89,7 +89,8 @@ for (i = 0; i < fileList1.length; i++) {
     for (j=0; j<nROIs; ++j) {
         roiManager("Select", j);
         run("Duplicate...", "title=crop.lif duplicate");
-        // REMOVE BACKGROUND (future implementation)
+        // REMOVE BACKGROUND (can be improved)
+        run("Clear Outside");
         
         saveAs("Tiff", outputDir_nuc_cr + base_title + "_n" + (j+1) + ".tif");
         close();
